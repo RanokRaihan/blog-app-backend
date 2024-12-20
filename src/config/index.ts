@@ -8,4 +8,5 @@ export const {
   MONGODB_URI: mongodb_uri,
   PORT: port,
   DB_NAME: db_name,
+  NODE_ENV: node_env,
 } = process.env;
