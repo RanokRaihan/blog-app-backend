@@ -9,4 +9,6 @@ export const {
   PORT: port,
   DB_NAME: db_name,
   NODE_ENV: node_env,
+  JWT_SECRET: jwt_secret,
+  JWT_EXPIRES_IN: jwt_expires_in,
 } = process.env;
