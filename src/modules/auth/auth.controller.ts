@@ -6,7 +6,7 @@ import { asyncHandler } from "../../utils/asyncHandler";
 import { createToken } from "../../utils/createToken";
 import { sendResponse } from "../../utils/sendResponse";
 import { findUserWithEmailService } from "../user/user.service";
-import { IjwtPayload } from "./auth.interface";
+import { IjwtPayload, TUserRole } from "./auth.interface";
 
 export const loginUserController = asyncHandler(
   async (req: Request, res: Response) => {
@@ -25,7 +25,7 @@ export const loginUserController = asyncHandler(
     const jwtPayload: IjwtPayload = {
       _id: user._id,
       email: user.email,
-      role: user.role,
+      role: user.role as TUserRole,
     };
     const accessToken = createToken(
       jwtPayload,

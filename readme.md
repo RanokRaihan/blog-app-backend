@@ -2,15 +2,29 @@
 
 This is the backend for the Blog App. It provides APIs for managing blog posts, comments, and users.
 
+## Live link
+
+You can access the live application [here](https://bike-store-backend.vercel.app/).
+
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/RanokRaihan/blog-app-backend.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd blog-app-backend
+```
 
 To install the dependencies, run:
 
@@ -23,41 +37,26 @@ npm install
 To start the server, run:
 
 ```bash
-npm start
+npm run dev
 ```
 
 The server will start on `http://localhost:3000`.
 
 ## API Endpoints
 
-### Posts
+### user endpoints
 
-- `GET /posts` - Get all posts
-- `POST /posts` - Create a new post
-- `GET /posts/:id` - Get a post by ID
-- `PUT /posts/:id` - Update a post by ID
-- `DELETE /posts/:id` - Delete a post by ID
+- `POST /api/auth/register` - create a user
+- `POST /api/auth/login` - Login a user
 
-### Comments
+### Blog Endpoint - only for authorized user
 
-- `GET /posts/:postId/comments` - Get all comments for a post
-- `POST /posts/:postId/comments` - Create a new comment for a post
-- `GET /comments/:id` - Get a comment by ID
-- `PUT /comments/:id` - Update a comment by ID
-- `DELETE /comments/:id` - Delete a comment by ID
+- `POST /api/blogs` - create a blog
+- `GET /api/blogs` - PUBLIC endpoint to get all blog with search, sort , filter
+- `PATCH /api/blogs/:id` - Update a blog by ID
+- `DELETE /api/blogs/:id` - Delete a blog by ID
 
-### Users
+### admin enpoints
 
-- `GET /users` - Get all users
-- `POST /users` - Create a new user
-- `GET /users/:id` - Get a user by ID
-- `PUT /users/:id` - Update a user by ID
-- `DELETE /users/:id` - Delete a user by ID
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License.
+- `PATCH /api/admin/users/:userId/block` - admin block any user with user id
+- `DELETE /api/admin/blogs/:id` - admi Delete any blog by ID
