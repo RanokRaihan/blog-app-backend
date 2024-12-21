@@ -4,7 +4,7 @@ This is the backend for the Blog App. It provides APIs for managing blog posts, 
 
 ## Live link
 
-You can access the live application [here](https://bike-store-backend.vercel.app/).
+You can access the live application [here](https://blog-app-backend-ten-fawn.vercel.app/).
 
 ## Table of Contents
 
